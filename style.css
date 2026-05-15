@@ -1,0 +1,110 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    background: #0f172a;
+    color: white;
+}
+
+header {
+    padding: 40px;
+    text-align: center;
+}
+
+.container {
+    width: 95%;
+    margin: auto;
+}
+
+.grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns:
+        repeat(auto-fit, minmax(350px, 1fr));
+}
+
+.card {
+    background: #111827;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.card h2 {
+    margin-bottom: 20px;
+    color: #00d4ff;
+}
+
+input,
+select,
+button {
+    width: 100%;
+    margin-top: 10px;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+}
+
+input,
+select {
+    background: #1e293b;
+    color: white;
+}
+
+button {
+    background:
+        linear-gradient(
+            135deg,
+            #00d4ff,
+            #8b5cf6
+        );
+
+    color: white;
+    cursor: pointer;
+}
+
+.result {
+    margin-top: 15px;
+    padding: 15px;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.05);
+}
+
+.resistor-display {
+    height: 70px;
+    margin-top: 20px;
+    border-radius: 12px;
+    background: #d6b98c;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.band {
+    width: 30px;
+    height: 100%;
+    border-radius: 6px;
+}
+
+.servo {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.servo-arm {
+    width: 8px;
+    height: 120px;
+    background: orange;
+    margin: auto;
+    transform-origin: bottom center;
+}
+
+canvas {
+    background: white;
+    margin-top: 20px;
+    border-radius: 12px;
+}
