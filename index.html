@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Tổ hợp G — Electronic Engineering Assistant
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+    <header>
+
+        <h1>
+            Tổ hợp G — Electronic Engineering Assistant
+        </h1>
+
+        <p>
+            Hệ thống trợ lý kỹ thuật điện tử hiện đại.
+        </p>
+
+    </header>
+
+    <div class="container">
+
+        <div class="grid">
+
+            <!-- RESISTOR -->
+
+            <div class="card">
+
+                <h2>
+                    🎨 Máy tính điện trở 4 màu
+                </h2>
+
+                <label>
+                    Vạch màu 1
+                </label>
+
+                <select id="band1"></select>
+
+                <label>
+                    Vạch màu 2
+                </label>
+
+                <select id="band2"></select>
+
+                <label>
+                    Hệ số nhân
+                </label>
+
+                <select id="multiplier"></select>
+
+                <label>
+                    Sai số
+                </label>
+
+                <select id="tolerance"></select>
+
+                <button onclick="calculateResistor()">
+                    Tính điện trở
+                </button>
+
+                <div class="resistor-display">
+
+                    <div class="band" id="b1"></div>
+
+                    <div class="band" id="b2"></div>
+
+                    <div class="band" id="b3"></div>
+
+                    <div class="band" id="b4"></div>
+
+                </div>
+
+                <div
+                    class="result"
+                    id="resistorResult"
+                ></div>
+
+            </div>
+
+            <!-- OHM -->
+
+            <div class="card">
+
+                <h2>
+                    ⚡ Máy tính định luật Ohm
+                </h2>
+
+                <input
+                    type="number"
+                    id="voltage"
+                    placeholder="Điện áp (V)"
+                >
+
+                <input
+                    type="number"
+                    id="current"
+                    placeholder="Dòng điện (A)"
+                >
+
+                <button onclick="calculateOhm()">
+                    Tính điện trở
+                </button>
+
+                <div
+                    class="result"
+                    id="ohmResult"
+                ></div>
+
+            </div>
+
+            <!-- RC -->
+
+            <div class="card">
+
+                <h2>
+                    ⏱️ Tính toán RC
+                </h2>
+
+                <input
+                    type="number"
+                    id="resistance"
+                    placeholder="Điện trở (Ω)"
+                >
+
+                <input
+                    type="number"
+                    id="capacitance"
+                    placeholder="Điện dung (F)"
+                >
+
+                <button onclick="calculateRC()">
+                    Tính RC
+                </button>
+
+                <div
+                    class="result"
+                    id="rcResult"
+                ></div>
+
+            </div>
+
+            <!-- RLC -->
+
+            <div class="card">
+
+                <h2>
+                    📈 Mô phỏng RLC
+                </h2>
+
+                <input
+                    type="number"
+                    id="rVal"
+                    placeholder="R"
+                >
+
+                <input
+                    type="number"
+                    id="lVal"
+                    placeholder="L"
+                >
+
+                <input
+                    type="number"
+                    id="cVal"
+                    placeholder="C"
+                >
+
+                <button onclick="simulateRLC()">
+                    Mô phỏng
+                </button>
+
+                <div
+                    class="result"
+                    id="rlcResult"
+                ></div>
+
+                <canvas id="rlcChart"></canvas>
+
+            </div>
+
+            <!-- UNIT -->
+
+            <div class="card">
+
+                <h2>
+                    🔄 Đổi đơn vị
+                </h2>
+
+                <input
+                    type="number"
+                    id="unitValue"
+                    placeholder="Giá trị"
+                >
+
+                <select id="unitType">
+
+                    <option value="1000">
+                        mA → A
+                    </option>
+
+                    <option value="1000000">
+                        uF → F
+                    </option>
+
+                    <option value="1000ohm">
+                        KΩ → Ω
+                    </option>
+
+                </select>
+
+                <button onclick="convertUnit()">
+                    Chuyển đổi
+                </button>
+
+                <div
+                    class="result"
+                    id="unitResult"
+                ></div>
+
+            </div>
+
+            <!-- SERVO -->
+
+            <div class="card">
+
+                <h2>
+                    🤖 Servo GUI
+                </h2>
+
+                <input
+                    type="range"
+                    min="0"
+                    max="180"
+                    value="90"
+                    id="servoSlider"
+                >
+
+                <div class="servo">
+
+                    <div
+                        class="servo-arm"
+                        id="servoArm"
+                    ></div>
+
+                </div>
+
+                <div
+                    class="result"
+                    id="servoResult"
+                >
+                    Góc Servo: 90°
+                </div>
+
+            </div>
+
+            <!-- CPU -->
+
+            <div class="card">
+
+                <h2>
+                    🖥️ Theo dõi CPU
+                </h2>
+
+                <button onclick="generateCPU()">
+                    Mô phỏng CPU
+                </button>
+
+                <div
+                    class="result"
+                    id="cpuResult"
+                ></div>
+
+                <canvas id="cpuChart"></canvas>
+
+            </div>
+
+            <!-- SPI -->
+
+            <div class="card">
+
+                <h2>
+                    📡 SPI
+                </h2>
+
+                <button onclick="simulateSPI()">
+                    Gửi dữ liệu
+                </button>
+
+                <div
+                    class="result"
+                    id="spiResult"
+                ></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="js/resistor.js"></script>
+    <script src="js/ohm.js"></script>
+    <script src="js/rc.js"></script>
+    <script src="js/rlc.js"></script>
+    <script src="js/converter.js"></script>
+    <script src="js/servo.js"></script>
+    <script src="js/cpu.js"></script>
+    <script src="js/spi.js"></script>
+    <script src="js/app.js"></script>
+
+</body>
+
+</html>
